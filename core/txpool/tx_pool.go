@@ -97,8 +97,8 @@ func (pool *TxPImpl) AddLinkedNode(linkedNode *blockcache.BlockCacheNode) error 
 
 // AddTx add the transaction
 func (pool *TxPImpl) AddTx(t *tx.Tx, from string) error {
-        if from == "p2p" {
-	   return nil
+	if from == "p2p" {
+		return nil
 	}
 	pool.mu.Lock()
 	err := pool.verifyDuplicate(t)
